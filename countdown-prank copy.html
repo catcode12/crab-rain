@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+    b2{
+        font-size: 20px;
+    }
+    u{
+        color: blue;
+    }
+</style>
+</head>
+<body>
+<b2>Turn ur volume up<br></b2>
+<b2>crab rave will start in</b2>
+<p id="demo"></p>
+<p><br>also use this link beforehand with volume down to make the loading time slower <br> <u><a href="https://www.youtube.com/watch?v=LDU_Txk06tM">https://www.youtube.com/watch?v=LDU_Txk06tM</a></u><br>its better with adblock</p>
+
+<script>
+// Set the date we're counting down to
+var playdate = new Date("April 1, 2019, 14:25:00").getTime();
+//var playdate = new Date("March 14, 2019, 14:19:00").getTime();
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    function PlayCrabRave()
+    {
+        window.open("https://youtu.be/LDU_Txk06tM?t=59");
+    }
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = playdate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var miliseconds = Math.floor((distance % (1000)));
+
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s " + miliseconds;
+    document.title = /*days + "d "*/ + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+
+    // If the countdown is over
+    if (distance < 0) {
+        clearInterval(x);
+        PlayCrabRave();
+    }
+}, 4);
+</script>
+
+</body>
+</html>
